@@ -1,0 +1,26 @@
+/* Custom Override: Define a specific Navy color for branding */
+.bg-navy {
+    background-color: #001f3f !important; /* 'Important' forces this color over Bootstrap defaults */
+}
+
+.text-navy {
+    color: #001f3f;
+}
+
+/* Customizing the Primary Button to match our theme */
+.btn-primary {
+    background-color: #001f3f;
+    border-color: #001f3f;
+}
+
+.btn-primary:hover {
+    background-color: #003366;
+    border-color: #003366;
+}
+
+/* Adding a subtle pattern to the body background */
+body {
+    background-color: #f8f9fa;
+    background-image: linear-gradient(#e9ecef 1px, transparent 1px), linear-gradient(90deg, #e9ecef 1px, transparent 1px);
+    background-size: 20px 20px;
+}

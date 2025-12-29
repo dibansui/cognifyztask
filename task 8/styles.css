@@ -1,0 +1,56 @@
+/* --- 1. Defining Variables [cite: 119] --- */
+/* Navy Blue */
+/* Orange */
+/* --- 2. Mixins (Reusable code snippets) --- */
+/* --- 3. Nested Styles [cite: 120] --- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Nesting: These styles apply to h1 tags INSIDE .container */
+}
+.container h1 {
+  color: #001f3f;
+  border-bottom: 2px solid #ff851b;
+  padding-bottom: 10px;
+  text-align: center;
+  /* Using the parent selector (&) for hover effects */
+}
+.container h1:hover {
+  color: #ff851b;
+  cursor: pointer;
+}
+.container p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+.container .button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Using the mixin we defined above */
+  margin-top: 30px;
+}
+.container .button-box button {
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+.container .button-box button:hover {
+  background-color: rgb(0, 56.0952380952, 114); /* Sass function to lighten color */
+}/*# sourceMappingURL=styles.css.map */

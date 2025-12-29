@@ -1,0 +1,69 @@
+/* --- 1. Defining Variables [cite: 119] --- */
+$primary-color: #001f3f;   /* Navy Blue */
+$accent-color: #ff851b;    /* Orange */
+$text-color: #333;
+$bg-color: #f4f4f4;
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+/* --- 2. Mixins (Reusable code snippets) --- */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- 3. Nested Styles [cite: 120] --- */
+body {
+  font-family: $font-stack;
+  background-color: $bg-color;
+  color: $text-color;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  /* Nesting: These styles apply to h1 tags INSIDE .container */
+  h1 {
+    color: $primary-color;
+    border-bottom: 2px solid $accent-color;
+    padding-bottom: 10px;
+    text-align: center;
+    
+    /* Using the parent selector (&) for hover effects */
+    &:hover {
+      color: $accent-color;
+      cursor: pointer;
+    }
+  }
+
+  p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .button-box {
+    @include flex-center; /* Using the mixin we defined above */
+    margin-top: 30px;
+
+    button {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%); /* Sass function to lighten color */
+      }
+    }
+  }
+}
